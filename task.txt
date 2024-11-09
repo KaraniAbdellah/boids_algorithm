@@ -1,0 +1,7 @@
+// try to understand the theory behind the boids
+// start implemting without using chatgpt
+	// if you are use it move to the problem solving
+	// can be better to move
+
+
+

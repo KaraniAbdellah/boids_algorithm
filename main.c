@@ -3,11 +3,13 @@
 #include "mlx_linux/mlx.h"
 #include <math.h>
 #include <string.h>
+#include "boids/header.h"
+
 
 
 int main() {
 	
-	printf("Hello orld");
+	print();
 	
 	return 0;
 }
