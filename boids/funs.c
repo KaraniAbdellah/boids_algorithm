@@ -24,5 +24,25 @@ void print() {
 
 
 
+// size_line: number of pixels * 4
+// HEIGHT is number of pixels
+void make_boid(int *data, int size_line) {
+	
+	
+	for (int y = 0; y < HEIGHT; y++) {
+		for (int x = 0; x < WIDTH; x++) {
+			data[x + y * (HEIGHT)] = 1873461;
+		}
+	}
+	
+
+	
+}
+
+
+
+
+
+
 
 
