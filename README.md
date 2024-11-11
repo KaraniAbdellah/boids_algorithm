@@ -1,8 +1,11 @@
 # boids_algorithm
 
 
+
 ## setup working with mlx_linux
 	see the source: https://github.com/KaraniAbdellah/fract_ol
+	NOTE: if you are working with mlx_linux (if my case i am working just with SDL2)
+
 
 ## setup working with SDL2
 
