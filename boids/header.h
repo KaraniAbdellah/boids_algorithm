@@ -8,7 +8,7 @@
 	
 	// start declaration of functions prototypes
 	void print();
-	void make_boid(int *data, int size_line);
+	void make_boid();
 
 
 

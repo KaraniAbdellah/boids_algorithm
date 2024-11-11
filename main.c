@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "mlx_linux/mlx.h"
 #include <math.h>
 #include <string.h>
 #include "boids/header.h"
@@ -32,8 +31,6 @@ int main() {
 	return 0;
 }
 
-
-// mlx_string_put(mlx, new_win, (WIDTH / 2) - 50, 100, 0x0000FF00, "HELLO WORLD");
 
 
 
