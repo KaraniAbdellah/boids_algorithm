@@ -5,7 +5,7 @@ https://vanhunteradams.com/Pico/Animal_Movement/Boids-algorithm.html#Boids-algor
 
 
 
-
-
-
+// mlx documentation
 https://harm-smits.github.io/42docs/libs/minilibx/colors.html
+
+
