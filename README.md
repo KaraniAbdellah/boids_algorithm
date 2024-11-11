@@ -18,6 +18,7 @@ CFLAGS = -I./mlx_linux -I/usr/include -I/usr/include/SDL2 # Include directories 
 LDFLAGS = -L./mlx_linux -lmlx_Linux -lXext -lX11 -lm -lz -lSDL2 # Libraries to link
 ```
 
+in main header file include <code>#include <SDL2/SDL.h></code>
 
 
 
