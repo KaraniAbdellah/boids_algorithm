@@ -31,9 +31,7 @@ int main() {
 	
 	mlx_put_image_to_window(mlx, new_win, new_img, 0, 0);
 	
-	mlx_string_put(mlx, new_win, (WIDTH / 2) - 50, 100, 0x0000FF00, "HELLO WORLD");
-	
-	// make_boid(data, size_line);
+	make_boid(data, size_line);
 	
 	
 	mlx_loop(mlx);
@@ -43,6 +41,8 @@ int main() {
 	return 0;
 }
 
+
+// mlx_string_put(mlx, new_win, (WIDTH / 2) - 50, 100, 0x0000FF00, "HELLO WORLD");
 
 
 

@@ -29,6 +29,7 @@ void print() {
 void make_boid(int *data, int size_line) {
 	
 	
+	// make a first boids like (rectangle in the center)
 	for (int y = 0; y < HEIGHT; y++) {
 		for (int x = 0; x < WIDTH; x++) {
 			data[x + y * (HEIGHT)] = 1873461;
