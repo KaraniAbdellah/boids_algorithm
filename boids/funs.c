@@ -36,6 +36,7 @@ void make_boid(int *data, int size_line) {
 		}
 	}
 	
+	
 
 	
 }
