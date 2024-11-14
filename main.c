@@ -1,39 +1,34 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <math.h>
-#include <string.h>
-#include "boids/header.h"
-// for initializing and shutdown functions
 #include <SDL2/SDL.h>
-// for rendering images and graphics on screen
-// #include <SDL2/SDL_image.h>
-// for using SDL_Delay() functions
-// #include <SDL2/SDL_timer.h>
-
-
 
 int main() {
-	
-	// returns zero on success else non-zero
-    if (SDL_Init(SDL_INIT_EVERYTHING) != 0) {
-        printf("error initializing SDL: %s\n", SDL_GetError());
+    // Initialize the SDL library for video
+    if (SDL_Init(SDL_INIT_VIDEO) != 0) {
+        return 1; // Exit if initialization fails
     }
-    SDL_Window* win = SDL_CreateWindow("GAME",
-                                       SDL_WINDOWPOS_CENTERED,
-                                       SDL_WINDOWPOS_CENTERED,
-                                       1000, 1000, 0);
-    
-	
-	
-	
-	return 0;
+
+    // Create a fullscreen window
+    SDL_Window *window = SDL_CreateWindow(
+        "BOIDS_ALGO",                   // Window title
+        SDL_WINDOWPOS_CENTERED,         // X position (centered)
+        SDL_WINDOWPOS_CENTERED,         // Y position (centered)
+        0,                              // Width (0 to auto-adjust with fullscreen)
+        0,                              // Height (0 to auto-adjust with fullscreen)
+        SDL_WINDOW_FULLSCREEN_DESKTOP   // Fullscreen mode on desktop resolution
+    );
+
+    // Check if window creation failed
+    if (!window) {
+        SDL_Quit();
+        return 1; // Exit if window creation fails
+    }
+
+    // Keep the window open for 3 seconds
+    SDL_Delay(3000);
+
+    // Clean up resources
+    SDL_DestroyWindow(window);
+    SDL_Quit();
+
+    return 0;
 }
-
-
-
-
-
-
-
-
 
