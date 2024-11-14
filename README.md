@@ -23,5 +23,29 @@ LDFLAGS = -L./mlx_linux -lmlx_Linux -lXext -lX11 -lm -lz -lSDL2 # Libraries to l
 
 in main header file include <code>#include <SDL2/SDL.h></code>
 
+## Intro to SDL2
+SDL is Simple DirectMedia Layer.It is a cross-platform development library 
+designed to provide low level access to audio, keyboard, mouse, joystick, 
+and graphics hardware via OpenGL and Direct3D.It can be used to make animations and video games.
+
+// for initializing and shutdown functions
+<code>#include <SDL2/SDL.h></code>
+ 
+// for rendering images and graphics on screen
+<code>#include <SDL2/SDL_image.h></code> 
+
+// for using SDL_Delay() functions
+<code>#include <SDL2/SDL_timer.h></code> 
+
+
+
+
+
+
+
+
+
+
+
 
 
