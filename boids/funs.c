@@ -18,20 +18,99 @@
 */
 
 
-void print() {
-	printf("Hello Boids");
+
+
+
+// initialize SDL & Create window
+int initialize_window(SDL_Window** win, SDL_Renderer** ren) {
+	if (SDL_Init(SDL_INIT_EVERYTHING) != 0) {
+		printf("Erorr Initialize Widnow");
+		return FALSE;		
+	}
+	
+	*win = SDL_CreateWindow(
+		"BOIDS",
+		SDL_WINDOWPOS_CENTERED, // x position
+		SDL_WINDOWPOS_CENTERED, // y position
+		WINDOW_WIDTH, // width
+		WINDOW_HEIGHT, // height
+		SDL_WINDOW_BORDERLESS
+	);
+	if (*win == NULL) return FALSE;
+	
+	*ren = SDL_CreateRenderer(*win, -1, 0);
+	if (*ren == NULL) return FALSE;
+	
+	return TRUE;
 }
 
 
-
-
-// size_line: number of pixels * 4
-// HEIGHT is number of pixels
-void make_boid() {
+void process_input(int *game_is_running) {
+	SDL_Event event;
+	SDL_PollEvent(&event);
 	
-	printf("Not Implemented YET!\n");
+	switch(event.type) {
+		case SDL_QUIT: // stop looping 
+			game_is_running = FALSE;
+			break;
+		case SDL_KEYDOWN:
+			if (event.key.keysym.sym == SDLK_ESCAPE) 
+				game_is_running = FALSE;
+			break;
+		default: break;
+	}
+}
+
+
+void update(ball *ball_rect) {
+	ball_rect->x += 1;
+	ball_rect->y += 1; 
+}
+
+
+void render(SDL_Renderer** ren, ball *ball_rect) {
+	SDL_SetRenderDrawColor(*ren, 0, 0, 0, 255);
+	SDL_RenderClear(*ren);
+	
+	// Draw a rectangle
+	SDL_Rect ball_rect_ren = {
+		ball_rect->x,
+		ball_rect->y,
+		ball_rect->width,
+		ball_rect->height
+	};
+	SDL_SetRenderDrawColor(*ren, 255, 255, 255, 255);
+	SDL_RenderFillRect(*ren, &ball_rect_ren);
+	
+	// Here we can start drawing objects
+	SDL_RenderPresent(*ren);
 	
 }
+
+
+void setup(ball *ball_rect) {
+	ball_rect->x = 20;
+	ball_rect->y = 20;
+	ball_rect->width = 15;
+	ball_rect->height = 15;
+}
+
+
+void destroy_window(SDL_Window** win, SDL_Renderer **ren) {
+	SDL_DestroyRenderer(*ren);
+	SDL_DestroyWindow(*win);
+	SDL_Quit();
+} 
+
+
+
+
+
+
+
+
+
+
 
 
 

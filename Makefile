@@ -4,16 +4,14 @@ OBJ = $(SRC:.c=.o)
 
 CC = gcc
 CFLAGS = -I/usr/include/SDL2 # Include directories for headers
-LDFLAGS = -lm -lSDL2 # Libraries to link
+LDFLAGS = -lm -lSDL2 -pthread # Libraries to link
 
 $(NAME): $(OBJ) 
-	$(CC) $(OBJ) $(LDFLAGS) $(CFLAGS) -pthread -o $(NAME) # Compile and link
-	rm -f $(OBJ) # Remove object files after building
+	$(CC) $(OBJ) $(LDFLAGS) -o $(NAME) # Compile and link
 
 clean:
 	rm -f $(OBJ) # Remove object files
 
 fclean: clean
 	rm -f $(NAME) # Remove the executable file
-
 
