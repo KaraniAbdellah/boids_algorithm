@@ -63,8 +63,11 @@ void process_input(int *game_is_running) {
 
 
 void update(ball *ball_rect) {
+	
+	SDL_Delay(30); // tell to the processor go to the other processor
+		
 	ball_rect->x += 1;
-	ball_rect->y += 1; 
+	ball_rect->y += 1;
 }
 
 

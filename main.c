@@ -17,7 +17,6 @@ int main() {
 		process_input(&game_is_running);
 		update(ball_rect);
 		render(&ren, ball_rect);
-		usleep(1000);	
 	}
 
     destroy_window(&win, &ren);

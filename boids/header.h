@@ -9,6 +9,9 @@
 	#define TRUE 1
 	#define WINDOW_WIDTH 800
 	#define WINDOW_HEIGHT 600
+	// use this in classis method [knoww we have SDL_Delay()]
+	#define FPS 30 // frames number
+	#define FRAME_TARGET_TIME (1000 / FPS) // each milsecond pass 30 frame
 
 	
 	typedef struct ball {
