@@ -62,13 +62,12 @@ void process_input(int *game_is_running) {
 
 
 void update(ball *ball_rect) {
-    SDL_Delay(10);
+    SDL_Delay(50);
 
     ball_rect->x += 1;
     ball_rect->y += 1;
 
-    if (ball_rect->x > WIDTH) ball_rect->x = 0;
-    if (ball_rect->y > HEIGHT) ball_rect->y = 0;
+   
 }
 
 
@@ -93,10 +92,10 @@ void render(SDL_Renderer** ren, ball *ball_rect) {
 
 
 void setup(ball *ball_rect) {
-	ball_rect->x = 20;
-	ball_rect->y = 20;
-	ball_rect->width = 15;
-	ball_rect->height = 15;
+	ball_rect->x = WIDTH / 2;
+	ball_rect->y = HEIGHT / 2;
+	ball_rect->width = 5;
+	ball_rect->height = 5;
 }
 
 
