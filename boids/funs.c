@@ -45,6 +45,7 @@ int initialize_window(SDL_Window** win, SDL_Renderer** ren) {
 }
 
 
+
 void process_input(int *game_is_running, SDL_Renderer** ren, ball *ball_rect, SDL_Rect* rects, int* index_rects) {
 	SDL_Event event;
 	SDL_PollEvent(&event);
@@ -58,11 +59,12 @@ void process_input(int *game_is_running, SDL_Renderer** ren, ball *ball_rect, SD
 			break;
 		case SDL_MOUSEBUTTONDOWN:
 			setup(ball_rect, event.button.x, event.button.y);
-			render(ren, ball_rect, rects, index_rects);
 			*index_rects = *index_rects + 1;
+			render(ren, ball_rect, rects, index_rects);
 		default: break;
 	}
 }
+
 
 
 void update(SDL_Rect *rects, int *index_rects) {
@@ -73,6 +75,7 @@ void update(SDL_Rect *rects, int *index_rects) {
   		rects[i].y = rects[i].y + 1;
   	}
 }
+
 
 
 SDL_Rect create_rect(ball *ball_rect, SDL_Renderer **ren) {
@@ -99,10 +102,10 @@ void render(SDL_Renderer** ren, ball *ball_rect, SDL_Rect* rects, int* index_rec
 	for (int i = 0; i <= *index_rects; i++) {
 		SDL_RenderFillRect(*ren, &rects[i]);
 	}
-	if (*index_rects == 0) *index_rects = *index_rects + 1;	
 	
 	SDL_RenderPresent(*ren);
 }
+
 
 
 void setup(ball *ball_rect, int x, int y) {
@@ -111,6 +114,7 @@ void setup(ball *ball_rect, int x, int y) {
 	ball_rect->width = 5;
 	ball_rect->height = 5;
 }
+
 
 
 void destroy_window(SDL_Window** win, SDL_Renderer **ren) {
