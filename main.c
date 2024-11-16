@@ -1,7 +1,9 @@
 #include <SDL2/SDL.h>
+#include <SDL2/SDL_image.h>
 #include <stdio.h>
 #include "boids/header.h"
 #include <unistd.h>
+#include <SDL2/SDL_timer.h>
 
 
 

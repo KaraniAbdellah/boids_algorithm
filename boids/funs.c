@@ -54,7 +54,6 @@ void process_input(int *game_is_running) {
 			game_is_running = FALSE;
 			break;
 		case SDL_KEYDOWN:
-			if (event.key.keysym.sym == SDLK_ESCAPE) 
 				game_is_running = FALSE;
 			break;
 		default: break;
@@ -63,11 +62,13 @@ void process_input(int *game_is_running) {
 
 
 void update(ball *ball_rect) {
-	
-	SDL_Delay(30); // tell to the processor go to the other processor
-		
-	ball_rect->x += 1;
-	ball_rect->y += 1;
+    SDL_Delay(10);
+
+    ball_rect->x += 1;
+    ball_rect->y += 1;
+
+    if (ball_rect->x > WIDTH) ball_rect->x = 0;
+    if (ball_rect->y > HEIGHT) ball_rect->y = 0;
 }
 
 
