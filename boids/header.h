@@ -24,10 +24,11 @@
 	// start declaration of functions prototypes
 	int initialize_window(SDL_Window** win, SDL_Renderer** ren);
 	void destroy_window(SDL_Window** win, SDL_Renderer** ren);
-	void process_input(int *game_is_running);
-	void update(ball *ball_rect);
-	void render(SDL_Renderer** ren, ball *ball_rect);
-	void setup(ball *ball_rect);
+	void process_input(int *game_is_running, SDL_Renderer** ren, ball *ball_rect, SDL_Rect* rects, int* index_rects);
+	void update(SDL_Rect *rects, int *index_rects);
+	void render(SDL_Renderer** ren, ball *ball_rect, SDL_Rect* rects, int* index_rects);
+	void setup(ball *ball_rect, int x, int y);
+	SDL_Rect create_rect(ball *ball_rect, SDL_Renderer **ren);
 
 
 
