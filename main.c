@@ -18,9 +18,8 @@ int main() {
 	
 	int game_is_running = initialize_window(&win, &ren);
 	setup(ball_rect, WIDTH / 2, HEIGHT / 2);
-
 	while (game_is_running) {
-    	process_input(&game_is_running, &ren, ball_rect, rects, &index_rects);
+		process_input(&game_is_running, &ren, ball_rect, rects, &index_rects);
 		update(rects, &index_rects);
 		render(&ren, ball_rect, rects, &index_rects);
 	}

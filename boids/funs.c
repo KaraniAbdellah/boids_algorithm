@@ -60,7 +60,7 @@ void process_input(int *game_is_running, SDL_Renderer** ren, ball *ball_rect, SD
 		case SDL_MOUSEBUTTONDOWN:
 			setup(ball_rect, event.button.x, event.button.y);
 			*index_rects = *index_rects + 1;
-			render(ren, ball_rect, rects, index_rects, 1);
+			render(ren, ball_rect, rects, index_rects);
 		default: break;
 	}
 }
@@ -73,7 +73,6 @@ void update(SDL_Rect *rects, int *index_rects) {
   	for (int i = 0; i <= *index_rects; i++) {
   		rects[i].x = rects[i].x + 1;
   		rects[i].y = rects[i].y + 1;
-  		printf("x = %d, y = %d, i = %d\n", rects[i].x, rects[i].y, i);
   	}
 }
 
@@ -91,14 +90,14 @@ SDL_Rect create_rect(ball *ball_rect, SDL_Renderer **ren) {
 	return ball_rect_ren;
 }
 
-void render(SDL_Renderer** ren, ball *ball_rect, SDL_Rect* rects, int* index_rects, int is_create) {
+void render(SDL_Renderer** ren, ball *ball_rect, SDL_Rect* rects, int* index_rects) {
 	SDL_SetRenderDrawColor(*ren, 0, 0, 0, 255);
 	SDL_RenderClear(*ren);
 	
 	// Draw a rectangle
 	SDL_Rect ball_rect_ren = create_rect(ball_rect, ren);	
 	rects[*index_rects] = ball_rect_ren;
-	if ()
+	
 	// Present all Rectangle
 	for (int i = 0; i <= *index_rects; i++) {
 		SDL_RenderFillRect(*ren, &rects[i]);
