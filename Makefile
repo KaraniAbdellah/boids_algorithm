@@ -1,5 +1,5 @@
 NAME = main
-SRC = main.c 
+SRC = main.c boids/funs.c
 OBJ = $(SRC:.c=.o)
 
 CC = gcc
