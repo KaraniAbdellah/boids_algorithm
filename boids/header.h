@@ -19,10 +19,6 @@
 		float y;
 		float width; 
 		float height;
-	  	float vx; // Velocity in the x-axis
-		float vy; // Velocity in the y-axis
-		float ax; // Acceleration in the x-axis
-		float ay; // Acceleration in the y-axis
 	} ball;
 	
 	// start declaration of functions prototypes
