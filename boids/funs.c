@@ -110,8 +110,8 @@ void render(SDL_Renderer** ren, ball *ball_rect, SDL_Rect* rects, int* index_rec
 void setup(ball *ball_rect, int x, int y) {
 	ball_rect->x = x;
 	ball_rect->y = y;
-	ball_rect->width = 5;
-	ball_rect->height = 5;
+	ball_rect->width = 10;
+	ball_rect->height = 10;
 }
 
 
